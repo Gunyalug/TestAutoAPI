@@ -1,0 +1,192 @@
+{
+	"info": {
+		"_postman_id": "49766a80-d0bf-472a-8bc0-241a32629cc8",
+		"name": "API SAP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38393465"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"CompanyDB\": \"SBODemoGB\",\r\n    \"Password\": \"1234\",\r\n    \"UserName\": \"manager\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/Login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Invoice",
+			"item": [
+				{
+					"name": "GetInvoice",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"DocDate\": \"2024-11-22\",\r\n    \"CardCode\": \"C20000\",\r\n    \"DocumentLines\": [\r\n        {\r\n            \"ItemCode\": \"A00001\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/Invoices(1)",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Invoices(1)"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllInvoices",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/Invoices",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Invoices"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invoices",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"DocDate\": \"2024-11-22\",\r\n    \"CardCode\": \"C20000\",\r\n    \"DocumentLines\": [\r\n        {\r\n            \"ItemCode\": \"A00001\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/Invoices",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Invoices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invoices",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"DocDate\": \"2024-11-22\",\r\n    \"CardCode\": \"C20000\",\r\n    \"DocumentLines\": [\r\n        {\r\n            \"ItemCode\": \"\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/Invoices",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Invoices"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://10.153.69.202:50000/b1s/v2/",
+			"type": "string"
+		}
+	]
+}
